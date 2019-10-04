@@ -1,0 +1,252 @@
+---
+title: "課堂練習"
+date: "9/12/2019"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(reticulate)
+use_python("/Users/laiyanrong/anaconda3/envs/myEnvironment/bin/python",
+           required = T)
+use_condaenv("myEnvironment", required = T)
+```
+
+```{r}
+# conda安裝方式
+conda_install("myEnvironment", # 沙盒環境名稱
+              c("numpy","pandas")) # 要安裝的modules
+```
+
+```{r}
+conda_install("myEnvironment", # 沙盒環境名稱
+              c("google-api-python-client"),
+              pip=TRUE) # 
+```
+
+```{python}
+string = "你好"
+string2 = '我很好' # 用單引號也可以
+type(string)
+numInteger = 3
+type(numInteger)
+#len(numInteger)
+numFloat = 3.
+type(numFloat)
+#len(numFloat)
+```
+
+```{python}
+logiT=True
+type(logiT)
+logiF=False
+type(logiF)
+```
+
+```{python}
+logiT+logiT+logiF
+```
+
+```{python}
+list1=[1,3,5]
+list2=[1,"b",True,(1,True,["A"])]
+len(list1)
+len(list2)
+```
+
+```{python}
+list3=[(((((("A"),"B"),"C"),"D"),"E"),"F"),(((((("S")))))),("G",("H",("I",("J",("K",("L"))))))]
+len(list3)
+```
+
+```{python}
+listA=[1,2,True]
+listA
+type(listA)
+listB=[1,["a","b"],True] # nested list
+listB
+type(listB)
+```
+
+```{python}
+tupleC=(1,["a","b"],True)
+type(tupleC)
+print(tupleC)
+```
+
+
+```{python}
+listA
+
+a,b,c=listA # unpacking to three objects
+type(a); type(b); type(c) # ;可併行
+
+tupleD=(a,b,c) # packing to a tuple
+type(tupleD)
+
+listD= [a,b,c] # packing to a list
+type(listD)
+```
+
+```{python}
+print(listA)
+
+a,*b = listA
+a; type(a)
+b; type(b)
+
+*a, b = listA
+a; type(a)
+b; type(b)
+```
+
+```{python}
+setD={1,"a",(1,4)}
+type(setD)
+print(setD)
+setE={True,False}
+print(setE)
+setF={1,"b",(1,4)}
+print(setF)
+```
+
+```{python}
+setG={1,"b",(1,4,(5,8))}
+print(setG)
+setH={1,"b",(1,4,(5,8))}
+print(setH)
+```
+
+```{python}
+setE={"a","b","b"}
+print(setE)
+```
+
+```{python}
+listY=[1,1,3,0,1,0,2]
+list(set(listY))
+```
+
+```{python}
+listA
+listA[0] # 從0開始數
+listA[1]
+listA[2]
+listA[3] # 沒有3
+```
+
+```{python}
+tupleC
+tupleC[0] # 從0開始數
+tupleC[1]
+tupleC[2]
+tupleC[3] # 沒有3
+```
+
+```{python}
+setE
+setE[0]
+```
+
+```{python}
+listA = [('Mary','John'),('A2838','C8898'),(89,73)]
+len(listA) # 元素個數
+listA[0] # 取第0個元素
+listA[0][1] # 取第0個元素出在，接著取它的第1個元素
+
+type(listA[0])
+type(listA[0][1])
+```
+
+```{python}
+tupleC=(1,["a","b"],True)
+tupleC[1][1]
+```
+
+```{python}
+listA=['A','B','C','D','E','F','G','H','I','J']
+listA
+listA[0:5:1]
+listA[0:5]
+listA[0:5:2]
+listA[:5] # 前面5個
+```
+
+```{python}
+listA
+listA[-2:5:-1]
+listA[-2:-6:-1]
+listA[-5:-1:1]
+listA[-5:] # 倒數後5個
+listA[-5:-1:-1]
+listA[-1:-5:-1]
+```
+
+```{python}
+listA[1:]
+listA[0:-1]
+```
+
+```{python}
+list(listA[index] for index in [0,2])
+```
+
+```{python}
+[listA[index] for index in [0,2]]
+```
+
+```{python}
+listB=[2,5,-1,31,-22,3,17,25]
+[listB[i] for i in [0,-2,-1]]
+```
+
+```{python}
+[listA[0],listA[2]]
+```
+
+```{python}
+list(listA[index] for index in [0,2])
+```
+
+```{python}
+dictionaryA ={"name": "Mary", "id": "A28374", "grade": 77}
+dictionaryA
+```
+
+```{python}
+sparseMatrix = {
+(0, 0): 3, 
+(0, 2): -2, 
+(0, 3): 11,
+(1, 1): 9, 
+(2, 1): 7, 
+(3, 3): -5}
+print(sparseMatrix)
+```
+
+```{python}
+dictionary_grade ={
+"name": ["小明","大雄","胖虎","小新","大白"], 
+"id": [172,214,322,425,517], 
+"grade": [80,60,90,70,50]
+}
+dictionary_grade
+```
+
+```{python}
+dictionary_grade["grade"]
+```
+
+```{python}
+numlist=[3,2,11,43]
+[numlist[i]+3 for i in [0,1,2,3]]
+numlist
+```
+
+```{python}
+
+```
+
